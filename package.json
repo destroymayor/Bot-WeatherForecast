@@ -2,5 +2,8 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "facebook-chat-api": "^1.2.0"
   }
 }
