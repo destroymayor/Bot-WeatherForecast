@@ -25,7 +25,12 @@ function getweather(callback) {
             return e.time + '：溫度：' + e.temp + ' 降雨機率：' + e.rain;
         }).join('\n');
 
-        callback(err, "新竹市\n" + message);
+        let date = new Date();
+        let date_ = date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDay() + "日",
+            date_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+        callback(err, "新竹市天氣預報 當前時間： " + date_ + " " + date_time + " \n " + message);
+        console.log(date_ + " " + date_time + "\n" + message);
     });
 }
 
