@@ -1,1 +1,1 @@
-# node.js facebook 天氣預報機器人
+# node.js fb weather forecast bot
