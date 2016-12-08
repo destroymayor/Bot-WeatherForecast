@@ -3,11 +3,10 @@ const cheerio = require('cheerio');
 
 function getweather(callback) {
     const url = "http://www.cwb.gov.tw/V7/forecast/taiwan/Hsinchu_City.htm";
-
     request(url, function (err, res, body) {
         let $ = cheerio.load(body);
-
         let weather = [];
+
         $('table.FcstBoxTable01 > tbody > tr').each(function () {
             weather.push($(this).text().split('\n'));
         });
@@ -26,8 +25,7 @@ function getweather(callback) {
         }).join('\n');
 
         let date = new Date();
-        let date_ = date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDay() + "日",
-            date_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        let date_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
         callback(err, "新竹市天氣預報\n當前時間： " + date_time + "\n" + message);
         console.log(date_ + " " + date_time + "\n" + message);
