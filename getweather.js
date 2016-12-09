@@ -28,7 +28,7 @@ function getweather(callback) {
         let date_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
         callback(err, "新竹市天氣預報\n當前時間： " + date_time + "\n" + message);
-        console.log(date_ + " " + date_time + "\n" + message);
+        console.log(date_time + "\n" + message);
     });
 }
 
